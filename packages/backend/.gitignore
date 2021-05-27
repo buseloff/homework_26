@@ -1,0 +1,7 @@
+/node_modules/
+/.env
+package-lock.json
+/__tests__/
+/lib/
+README.md
+server.log

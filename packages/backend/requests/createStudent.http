@@ -1,0 +1,10 @@
+POST http://127.0.0.1:3000/api/students
+Content-Type: application/json
+
+{
+    "name": "Nametest1", 
+    "surname": "Surnametest1",
+    "age": 20,
+    "email": "Surnametest1@gmail.com",
+    "id_group": 1
+}
