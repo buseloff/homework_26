@@ -1,0 +1,17 @@
+const ACTION_TYPES = {
+  CREATE_STUDENT: Symbol(),
+  CREATE_STUDENT_REQUEST: Symbol(),
+  CREATE_STUDENT_SUCCESS: Symbol(),
+  CREATE_STUDENT_ERROR: Symbol(),
+
+  GET_STUDENTS: Symbol(),
+  GET_STUDENTS_REQUEST: Symbol(),
+  GET_STUDENTS_SUCCESS: Symbol(),
+  GET_STUDENTS_ERROR: Symbol(),
+
+  PAGE_INCREMENT: Symbol(),
+  PAGE_DECREMENT: Symbol(),
+
+};
+
+export default ACTION_TYPES;

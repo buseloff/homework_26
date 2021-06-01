@@ -1,0 +1,26 @@
+.listItem {
+  background-color: grey;
+}
+
+.listItem:nth-child(2n) {
+  background-color: silver;
+}
+
+.error {
+  font-size: 25px;
+  color: red;
+}
+
+.fetching {
+  font-size: 25px;
+  color: yellow;
+}
+
+.paginator {
+  line-height: 150%;
+}
+.paginator > button {
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer;
+}

@@ -1,39 +1,60 @@
-import ACTION_TYPES from "./types";
+import ACTION_TYPES from "./actionTypes";
 
-export const createStudent = (data) => ({
+const createStudent = (data) => ({
   type: ACTION_TYPES.CREATE_STUDENT,
   data,
 });
 
-export const createStudentRequest = () => ({
+const createStudentRequest = () => ({
   type: ACTION_TYPES.CREATE_STUDENT_REQUEST,
 });
 
-export const createStudentSuccess = (hero) => ({
+const createStudentSuccess = (student) => ({
   type: ACTION_TYPES.CREATE_STUDENT_SUCCESS,
-  hero,
+  student,
 });
 
-export const createStudentError = (error) => ({
+const createStudentError = (error) => ({
   type: ACTION_TYPES.CREATE_STUDENT_ERROR,
   error,
 });
 
-export const getStudents = (params) => ({
+const getStudents = (params) => ({
   type: ACTION_TYPES.GET_STUDENTS,
   params,
 });
 
-export const getStudentsRequest = () => ({
+const getStudentsRequest = () => ({
   type: ACTION_TYPES.GET_STUDENTS_REQUEST,
 });
 
-export const getStudentsSuccess = (heroes) => ({
+const getStudentsSuccess = (data) => ({
   type: ACTION_TYPES.GET_STUDENTS_SUCCESS,
-  heroes,
+  data,
 });
 
-export const getStudentsError = (error) => ({
+const getStudentsError = (error) => ({
   type: ACTION_TYPES.GET_STUDENTS_ERROR,
   error,
 });
+
+const pageIncrement = () => ({
+  type: ACTION_TYPES.PAGE_INCREMENT,
+});
+
+const pageDecrement = () => ({
+  type: ACTION_TYPES.PAGE_DECREMENT,
+});
+
+export default {
+  createStudent,
+  createStudentRequest,
+  createStudentSuccess,
+  createStudentError,
+  getStudents,
+  getStudentsRequest,
+  getStudentsSuccess,
+  getStudentsError,
+  pageDecrement,
+  pageIncrement,
+};

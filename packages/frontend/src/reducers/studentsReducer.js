@@ -1,12 +1,13 @@
-import ACTION_TYPES from "../actions/types";
+import ACTION_TYPES from "../actions/actionTypes";
 
 const initialState = {
   students: [],
   isFetching: false,
   error: null,
+  page: 1,
 };
 
-function studentsreducer(state = initialState, action) {
+function studentsReducer(state = initialState, action) {
   const { type } = action;
   switch (type) {
     case ACTION_TYPES.GET_STUDENTS_REQUEST:
@@ -27,10 +28,10 @@ function studentsreducer(state = initialState, action) {
       };
     }
     case ACTION_TYPES.GET_STUDENTS_SUCCESS: {
-      const { students } = action;
+      const { data } = action;
       return {
         ...state,
-        students: students,
+        students: data,
         isFetching: false,
         error: false,
       };
@@ -45,10 +46,24 @@ function studentsreducer(state = initialState, action) {
         error,
       };
     }
+    case ACTION_TYPES.PAGE_INCREMENT: {
+      const { page } = state;
+      return {
+        ...state,
+        page: page + 1,
+      };
+    }
+    case ACTION_TYPES.PAGE_DECREMENT: {
+      const { page } = state;
+      return {
+        ...state,
+        page: page - 1,
+      };
+    }
     default: {
       return state;
     }
   }
 }
 
-export default studentsreducer;
+export default studentsReducer;

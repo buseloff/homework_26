@@ -1,0 +1,44 @@
+input:required {
+  border: lpx solid lightgrey;
+}
+
+input:optional {
+  border: lpx solid white;
+}
+
+input[type="email"]:focus {
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+}
+
+input[type="email"]:focus:invalid {
+  background: red;
+}
+input[type="email"]:focus:valid {
+  background: green;
+}
+
+input[type="number"] :focus {
+  background: lightblue;
+}
+input[type="number"] :focus:out-of-range {
+  background: red;
+}
+
+input[type="number"] :focus:in-range {
+  background: green;
+}
+
+.error {
+  font-size: 25px;
+  color: red;
+}
+
+.fetching {
+  font-size: 25px;
+  color: yellow;
+}
+
+.wrapper {
+  padding: 10px;
+}
