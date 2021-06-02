@@ -47,7 +47,12 @@ function studentsReducer(state = initialState, action) {
       };
     }
     case ACTION_TYPES.PAGE_INCREMENT: {
-      const { page } = state;
+      const { page, students } = state;
+      if (students.length < 20) {
+        return {
+          ...state,
+        };
+      }
       return {
         ...state,
         page: page + 1,
@@ -55,11 +60,18 @@ function studentsReducer(state = initialState, action) {
     }
     case ACTION_TYPES.PAGE_DECREMENT: {
       const { page } = state;
+      if (page === 1) {
+        return {
+          ...state,
+          page: 1,
+        };
+      }
       return {
         ...state,
         page: page - 1,
       };
     }
+
     default: {
       return state;
     }

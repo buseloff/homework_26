@@ -1,4 +1,3 @@
-import { Redirect } from "react-router-dom";
 import React, { useRef } from "react";
 import { connect } from "react-redux";
 import { createStudent } from "./../../api/index";
@@ -35,11 +34,12 @@ function StudentForm(props) {
     if (isFetching) {
       return <div className={styles.fetching}>LOAD...</div>;
     }
-    return <Redirect to="/students" />;
+    window.alert("Student created!");
   };
 
   return (
     <div className={styles.wrapper}>
+      <h1>Create a student</h1>
       <label>Name</label>
       <br />
       <input ref={name} type="text" required />
@@ -57,7 +57,7 @@ function StudentForm(props) {
       <br />
       <label>E-mail</label>
       <br />
-      <input ref={email} type="email" size="255" required />
+      <input ref={email} type="email" size="20" required />
       <br />
       <br />
       <label>Id_group</label>

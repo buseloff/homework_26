@@ -14,17 +14,6 @@ function StudentItem(props) {
       id_group: ${id_group}`}
     </li>
   );
-  /* <NavLink exact to={`/students/edit/${id}`} activeStyle={styles.active}>
-        Edit
-      </NavLink>
-      |
-      <form
-        action={`http://localhost:3000/students/delete/${id}`}
-        method="POST"
-        style="display:inline;"
-      >
-        <input type="submit" value="Delete" className={styles.btn} />
-      </form> */
 }
 
 function StudentList(props) {
@@ -50,7 +39,7 @@ function StudentList(props) {
     loadUsers();
   }, [page]);
 
-  console.log(students);
+  //console.log(students);
   if (error) {
     return <div className={styles.error}>Error!!!</div>;
   }
@@ -78,14 +67,5 @@ const mapStateToProps = (state) => {
   const { studentsState } = state;
   return studentsState;
 };
-/*
-const mapDispatchToProps = (dispatch) => {
-  return {
-    getUsersRequest: () => dispatch({ type: ACTION_TYPES.GET_USERS_REQUEST }),
-    getUsersSuccess: (data) =>
-      dispatch({ type: ACTION_TYPES.GET_USERS_SUCCESS, users: data }),
-    getUsersError: (error) =>
-      dispatch({ type: ACTION_TYPES.GET_USERS_ERROR, error }),
-  };
-};*/
+
 export default connect(mapStateToProps, actions)(StudentList);

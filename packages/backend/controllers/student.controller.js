@@ -6,13 +6,15 @@ module.exports.createStudent = async (req, res, next) => {
   try {
     const createdStudent = await Student.create(body);
     if (createdStudent) {
-      return res.status(201).send({ data: createdStudent });
+      return res.status(201).send({ data: createdStudent.get() });
     }
     res.status(400).send("Bad request!");
+    return next(new Error());
   } catch (err) {
     next(err);
   }
 };
+
 module.exports.getAllStudents = async (req, res, next) => {
   const {
     query: { page, results },

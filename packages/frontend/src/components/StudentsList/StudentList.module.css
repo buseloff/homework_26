@@ -1,5 +1,13 @@
+body {
+  background-color: lightgrey;
+}
 .listItem {
   background-color: grey;
+  height: 18px;
+  list-style-type: none;
+  padding: 5px;
+  width: 60vw;
+  margin-left: 50px;
 }
 
 .listItem:nth-child(2n) {
@@ -16,11 +24,23 @@
   color: yellow;
 }
 
+h2 {
+  font-size: 25px;
+  text-align: center;
+  padding: 0px;
+}
+
 .paginator {
-  line-height: 150%;
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .paginator > button {
-  display: inline-block;
-  margin-right: 10px;
+  font-size: 20px;
+  width: 60px;
+  height: 30px;
   cursor: pointer;
+  border-radius: 10px;
+  padding: 0px;
 }
